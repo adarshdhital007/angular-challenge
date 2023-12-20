@@ -1,14 +1,12 @@
-<div
-  class="flex w-full flex-col items-center justify-center min-h-screen"
->
-<h1 class="text-3xl text-emerald-500">Login Field Checker Dirty</h1>
+<div class="flex w-full flex-col items-center justify-center min-h-screen">
+  <h1 class="text-3xl text-emerald-500">Login Field Checker Dirty</h1>
   <form
     [formGroup]="loginForm"
     (ngSubmit)="onSubmit()"
     class="w-3/4 p-4 rounded-xl mx-auto mt-8 border border-black"
   >
     <div class="mb-4">
-      <label for="username" class="block ">Username:</label>
+      <label for="username" class="block">Username:</label>
       <input
         type="text"
         id="username"
@@ -16,14 +14,20 @@
         class="form-input mt-1 block w-full rounded-md border-black border"
       />
     </div>
-    <div class="mb-4">
-      <label for="password" class="block ">Password:</label>
+    <div class="mb-4 relative">
+      <label for="password" class="block">Password:</label>
+      <i
+        class="absolute right-0 fa p-2"
+        [ngClass]="{ 'fa-eye': !showPassword, 'fa-eye-slash': showPassword }"
+        (click)="togglePasswordVisibility()"
+      ></i>
       <input
-        type="password"
+        type="{{ showPassword ? 'text' : 'password' }}"
         id="password"
         formControlName="password"
         class="form-input border border-black mt-1 block w-full rounded-md"
       />
+
       <div
         *ngIf="password?.invalid && (password?.dirty || password?.touched)"
         class="text-red-500 mt-2"
@@ -51,7 +55,7 @@
     </button>
   </form>
 
-  <div class=" rounded-xl p-2 border border-black mt-8 w-3/4 mx-auto">
+  <div class="rounded-xl p-2 border border-black mt-8 w-3/4 mx-auto">
     <h2 class="text-xl font-bold mb-4">Temporary Users:</h2>
     <table class="p-2 w-full">
       <thead>

@@ -1,32 +1,26 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { LoginDirtyComponent } from './components/challenges/login-dirty/login-dirty.component';
 import { HttpClientModule } from '@angular/common/http';
 import { DropdownExampleComponent } from './components/challenges/dropdown-example/dropdown-example.component';
 import { CreditCardFormatterComponent } from './components/challenges/credit-card-formatter/credit-card-formatter.component';
 import { TodoWithSignalComponent } from './components/challenges/todo-with-signal/todo-with-signal.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatDividerModule } from '@angular/material/divider';
+import { Child1Component } from './components/challenges/child/child-1/child-1.component';
+import { Child2Component } from './components/challenges/child/child-2/child-2.component';
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     CommonModule,
     RouterOutlet,
+    RouterModule,
     LoginDirtyComponent,
     HttpClientModule,
     TodoWithSignalComponent,
     DropdownExampleComponent,
     CreditCardFormatterComponent,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatDividerModule,
-    MatButtonModule,
+    Child1Component,Child2Component
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],

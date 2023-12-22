@@ -5,10 +5,18 @@ import { CreditCardFormatterComponent } from './components/challenges/credit-car
 import { DropdownExampleComponent } from './components/challenges/dropdown-example/dropdown-example.component';
 
 export const routes: Routes = [
-
   { path: '', component: LoginDirtyComponent },
   { path: 'dirty-checker', component: LoginDirtyComponent },
   { path: 'todo-with-signal', component: TodoWithSignalComponent },
   { path: 'credit-card-formatter', component: CreditCardFormatterComponent },
   { path: 'drop-down', component: DropdownExampleComponent },
+
+  {
+    path: 'child',
+    loadChildren: () =>
+      import('./components/challenges/child/child.routing').then(
+        (m) => m.routes
+      ),
+      
+  },
 ];

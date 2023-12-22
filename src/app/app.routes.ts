@@ -3,6 +3,7 @@ import { TodoWithSignalComponent } from './components/challenges/todo-with-signa
 import { LoginDirtyComponent } from './components/challenges/login-dirty/login-dirty.component';
 import { CreditCardFormatterComponent } from './components/challenges/credit-card-formatter/credit-card-formatter.component';
 import { DropdownExampleComponent } from './components/challenges/dropdown-example/dropdown-example.component';
+import { MiToastComponent } from './components/shared/common/mi-toast/mi-toast.component';
 
 export const routes: Routes = [
   { path: '', component: LoginDirtyComponent },
@@ -10,6 +11,7 @@ export const routes: Routes = [
   { path: 'todo-with-signal', component: TodoWithSignalComponent },
   { path: 'credit-card-formatter', component: CreditCardFormatterComponent },
   { path: 'drop-down', component: DropdownExampleComponent },
+  { path: 'toast', component: MiToastComponent },
 
   {
     path: 'child',

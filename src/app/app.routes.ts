@@ -4,6 +4,7 @@ import { LoginDirtyComponent } from './components/challenges/login-dirty/login-d
 import { CreditCardFormatterComponent } from './components/challenges/credit-card-formatter/credit-card-formatter.component';
 import { DropdownExampleComponent } from './components/challenges/dropdown-example/dropdown-example.component';
 import { MiToastComponent } from './components/shared/common/mi-toast/mi-toast.component';
+import { DepositCalculatorComponent } from './components/challenges/deposit-calculator/deposit-calculator.component';
 
 export const routes: Routes = [
   { path: '', component: LoginDirtyComponent },
@@ -12,6 +13,7 @@ export const routes: Routes = [
   { path: 'credit-card-formatter', component: CreditCardFormatterComponent },
   { path: 'drop-down', component: DropdownExampleComponent },
   { path: 'toast', component: MiToastComponent },
+  { path: 'deposit', component: DepositCalculatorComponent },
 
   {
     path: 'child',
@@ -19,6 +21,5 @@ export const routes: Routes = [
       import('./components/challenges/child/child.routing').then(
         (m) => m.routes
       ),
-      
   },
 ];

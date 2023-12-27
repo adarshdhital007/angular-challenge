@@ -1,0 +1,78 @@
+<body class="h-100 m-0 flex align-center items-center justify-center">
+  <div class="flex align-center items-center flex-col">
+    <div class="p-4">
+      <form name="calculator">
+        <table>
+          <tr>
+            <td>Initial deposit</td>
+            <td>
+              <input
+                name="money"
+                type="number"
+                class="border border-black p-1 rounded-md"
+                [(ngModel)]="initialDeposit"
+                (input)="onInput()"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>How many months?</td>
+            <td>
+              <select
+                name="months"
+                class="border border-black p-1 rounded-md"
+                [(ngModel)]="numberOfMonths"
+                (change)="onChange()"
+              >
+                <option value="3">3 (minimum)</option>
+                <option value="6">6 (half-year)</option>
+                <option value="12" selected>12 (one year)</option>
+                <option value="18">18 (1.5 years)</option>
+                <option value="24">24 (2 years)</option>
+                <option value="30">30 (2.5 years)</option>
+                <option value="36">36 (3 years)</option>
+                <option value="60">60 (5 years)</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>Interest per year?</td>
+            <td>
+              <input
+                name="interest"
+                type="number"
+                class="border border-black p-1 rounded-md"
+                [(ngModel)]="interestRate"
+                (input)="onInput()"
+                required
+              />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+    <table id="diagram" class="border-black border">
+      <tr>
+        <th>Was:</th>
+        <th>Becomes:</th>
+      </tr>
+      <tr>
+        <th id="money-before" class="p-10">{{ moneyBefore }}</th>
+        <th id="money-after" class="p-10">{{ moneyAfter }}</th>
+      </tr>
+      <td>
+        <div style="background: red; width: 40px; height: 100px"></div>
+      </td>
+      <td>
+        <div
+          style="background:green; width: 40px; height: {{
+            heightAfter + 'px'
+          }}"
+          id="height-after"
+        ></div>
+      </td>
+    </table>
+  </div>
+</body>
